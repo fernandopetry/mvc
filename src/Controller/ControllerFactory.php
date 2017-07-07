@@ -47,7 +47,8 @@ class ControllerFactory
     public function factory(){
         $controller = new $this->namespace();
 
-        if(!empty($this->router->getParams())){
+        $param = $this->router->getParams();
+        if(!empty($param)){
             return call_user_func_array(array($controller, $this->router->getAction()), $this->router->getParams());
         }
 
