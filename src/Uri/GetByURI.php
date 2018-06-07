@@ -26,7 +26,8 @@ class GetByURI implements iGet
     }
 
     private function prepare(){
-        $this->param = filter_input(INPUT_GET, $this->paramName);
+        //$this->param = filter_input(INPUT_GET, $this->paramName);
+        $this->param = (isset($_GET[$this->paramName]) ? $_GET[$this->paramName] : null;
     }
 
     public function getParam()
